@@ -10,8 +10,6 @@ Aplicación web interactiva que muestra la malla curricular completa de la carre
 - **Diseño responsive**: Adaptable a diferentes tamaños de pantalla
 - **Multi-desbloqueo**: Un curso puede desbloquear varios cursos simultáneamente
 
-
-
 ## 🚀 Cómo usar
 
 1. **Navega entre años** usando las pestañas superiores
@@ -40,4 +38,3 @@ Para modificar los cursos o prerequisitos, edita el archivo `index.html`:
 - Los datos se guardan solo en tu navegador actual
 - Para compartir tu progreso entre dispositivos, considera implementar autenticación
 - Puedes resetear todo tu progreso con el botón inferior
-
