@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+.anios {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.anio-btn {
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.anio-btn.active {
+    background: #2c3e50;
+}
+.ciclos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.ciclo-btn {
+    padding: 8px 15px;
+    background: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.ciclo-btn.active {
+    background: #7f8c8d;
+}
+.ciclo {
+    display: none;
+}
+.ciclo.active {
+    display: block;
+}
+.curso {
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.curso-bloqueado {
+    opacity: 0.6;
+    background: #f0f0f0;
+}
+.curso h2 {
+    margin-top: 0;
+    color: #3498db;
+}
+.prerequisito {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.completar-btn {
+    padding: 8px 15px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.completar-btn:hover {
+    background: #27ae60;
+}
+.completado {
+    background: #bdc3c7;
+    text-decoration: line-through;
+}

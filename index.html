@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Estudios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>📅Malla Curricular de Administración y Negocios Digitales</h1>
+
+    <!-- Pestañas de Años -->
+    <div class="anios">
+        <button class="anio-btn active" onclick="mostrarAnio('primer-anio')">Primer Año</button>
+        <button class="anio-btn" onclick="mostrarAnio('segundo-anio')">Segundo Año</button>
+        <button class="anio-btn" onclick="mostrarAnio('tercer-anio')">Tercer Año</button>
+        <button class="anio-btn" onclick="mostrarAnio('cuarto-anio')">Cuarto Año</button>
+        <button class="anio-btn" onclick="mostrarAnio('quinto-anio')">Quinto Año</button>
+    </div>
+
+    <!-- PRIMER AÑO-->
+    <div id="primer-anio" class="anio-content">
+        <!-- Pestañas de Ciclos -->
+        <div class="ciclos">
+            <button class="ciclo-btn active" onclick="mostrarCiclo('primer-ciclo')">Primer Ciclo</button>
+            <button class="ciclo-btn" onclick="mostrarCiclo('segundo-ciclo')">Segundo Ciclo</button>
+        </div>
+
+        <!-- Primer Ciclo -->
+        <div id="primer-ciclo" class="ciclo active">
+            <div class="curso" id="curso1">
+                <h2>Microeconomía Aplicada</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso1', 'curso15')">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso2">
+                <h2>Introducción a la Administración y los Negocios Digitales</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso2', 'curso8,curso9,curso10')">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso3">
+                <h2>Taller de planeamiento y estrategias del aprendizaje</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso3', null)">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso4">
+                <h2>Pensamiento matemático</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso4', 'curso11,curso12')">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso5">
+                <h2>Laboratorio de comunicación I</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso5', 'curso13')">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso6">
+                <h2>Perú: Temas de la Sociedad Contemporánea</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso6', null)">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso7">
+                <h2>Proyectos Interdisciplinarios I</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso7', 'curso19')">✅ Completar</button>
+            </div>
+        </div>
+
+        <!-- Segundo Ciclo -->
+        <div id="segundo-ciclo" class="ciclo">
+            <div class="curso curso-bloqueado" id="curso8">
+                <h2>Tendencias en tecnología</h2>
+                <p class="prerequisito">Prerequisito: Introducción a la Administración y Negocios Digitales</p>
+                <button class="completar-btn" onclick="completarCurso('curso8', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso9">
+                <h2>Fundamentos de Marketing</h2>
+                <p class="prerequisito">Prerequisito: Introducción a la Administración y Negocios Digitales</p>
+                <button class="completar-btn" onclick="completarCurso('curso9', 'curso16,curso22')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso10">
+                <h2>Contabilidad Financiera</h2>
+                <p class="prerequisito">Prerequisito: Introducción a la Administración y Negocios Digitales</p>
+                <button class="completar-btn" onclick="completarCurso('curso10', 'curso17,curso20')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso11">
+                <h2>Matemática para Administradores</h2>
+                <p class="prerequisito">Prerequisito: Pensamiento Matemático</p>
+                <button class="completar-btn" onclick="completarCurso('curso11', 'curso18')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso12">
+                <h2>Programación I</h2>
+                <p class="prerequisito">Prerequisito: Pensamiento Matemático</p>
+                <button class="completar-btn" onclick="completarCurso('curso12', 'curso14')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso13">
+                <h2>Laboratorio de Comunicación II</h2>
+                <p class="prerequisito">Prerequisito: Laboratorio de Comunicación I</p>
+                <button class="completar-btn" onclick="completarCurso('curso13', null)" disabled>🔒 Completar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGUNDO AÑO (Oculto inicialmente) -->
+    <div id="segundo-anio" class="anio-content" style="display: none;">
+        <div class="ciclos">
+            <button class="ciclo-btn active" onclick="mostrarCiclo('tercer-ciclo')">Tercer Ciclo</button>
+            <button class="ciclo-btn" onclick="mostrarCiclo('cuarto-ciclo')">Cuarto Ciclo</button>
+        </div>
+
+        <!-- Tercer Ciclo -->
+        <div id="tercer-ciclo" class="ciclo active">
+            <div class="curso curso-bloqueado" id="curso14">
+                <h2>Programación Orientada a Objetos</h2>
+                <p class="prerequisito">Prerequisito: Programación I</p>
+                <button class="completar-btn" onclick="completarCurso('curso14', 'curso21,curso25')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso15">
+                <h2>Macroeconomía Aplicada</h2>
+                <p class="prerequisito">Prerequisito: Microeconomía Aplicada</p>
+                <button class="completar-btn" onclick="completarCurso('curso15', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso16">
+                <h2>Comportamiento del Consumidor</h2>
+                <p class="prerequisito">Prerequisito: Fundamentos de Marketing</p>
+                <button class="completar-btn" onclick="completarCurso('curso16', 'curso23,curso31')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso17">
+                <h2>Fundamentos de Finanzas</h2>
+                <p class="prerequisito">Prerequisito: Contabilidad Financiera</p>
+                <button class="completar-btn" onclick="completarCurso('curso17', 'curso27')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso18">
+                <h2>Estadística para Administradores I</h2>
+                <p class="prerequisito">Prerequisito: Matemática para Administradores</p>
+                <button class="completar-btn" onclick="completarCurso('curso18', 'curso24')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso19">
+                <h2>Proyectos Interdisciplinarios II</h2>
+                <p class="prerequisito">Prerequisito: Proyectos Interdisciplinarios I</p>
+                <button class="completar-btn" onclick="completarCurso('curso19', 'curso26,curso33')" disabled>🔒 Completar</button>
+            </div>
+        </div>
+
+        <!-- Cuarto Ciclo -->
+        <div id="cuarto-ciclo" class="ciclo">
+            <div class="curso curso-bloqueado" id="curso20">
+                <h2>Contabilidad Gerencial</h2>
+                <p class="prerequisito">Prerequisito: Contabilidad Financiera</p>
+                <button class="completar-btn" onclick="completarCurso('curso20', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso21">
+                <h2>Gestión de la Información</h2>
+                <p class="prerequisito">Prerequisito: Programación Orientada a Objetos</p>
+                <button class="completar-btn" onclick="completarCurso('curso21', 'curso30')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso22">
+                <h2>Derecho Empresarial</h2>
+                <p class="prerequisito">Prerequisito: Fundamentos de Marketing</p>
+                <button class="completar-btn" onclick="completarCurso('curso22', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso23">
+                <h2>Antropología Aplicada a los Negocios</h2>
+                <p class="prerequisito">Prerequisito: Comportamiento del consumidor</p>
+                <button class="completar-btn" onclick="completarCurso('curso23', 'curso28,curso32')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso24">
+                <h2>Estadística para Administradores II</h2>
+                <p class="prerequisito">Prerequisito: Estadística para Administradores I</p>
+                <button class="completar-btn" onclick="completarCurso('curso24', 'curso29')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso25">
+                <h2>Desarrollo Basado en Plataformas</h2>
+                <p class="prerequisito">Prerequisito: Programación Orientado a Objetos</p>
+                <button class="completar-btn" onclick="completarCurso('curso25', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso26">
+                <h2>Proyectos Interdisciplinarios III</h2>
+                <p class="prerequisito">Prerequisito: Proyectos Interdisciplinarios II</p>
+                <button class="completar-btn" onclick="completarCurso('curso26', null)" disabled>🔒 Completar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERCER AÑO (Oculto inicialmente) -->
+    <div id="tercer-anio" class="anio-content" style="display: none;">
+        <div class="ciclos">
+            <button class="ciclo-btn active" onclick="mostrarCiclo('quinto-ciclo')">Quinto Ciclo</button>
+            <button class="ciclo-btn" onclick="mostrarCiclo('sexto-ciclo')">Sexto Ciclo</button>
+        </div>
+
+        <!-- Quinto Ciclo -->
+        <div id="quinto-ciclo" class="ciclo active">
+            <div class="curso curso-bloqueado" id="curso27">
+                <h2>Análisis de Estados Financieros</h2>
+                <p class="prerequisito">Prerequisito: Fundamentos de Finanzas</p>
+                <button class="completar-btn" onclick="completarCurso('curso27', 'curso37')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso28">
+                <h2>Investigación de Mercados</h2>
+                <p class="prerequisito">Prerequisito: Antropología Aplicada a los Negocios</p>
+                <button class="completar-btn" onclick="completarCurso('curso28', 'curso36')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso29">
+                <h2>Modelos para la Toma de Decisiones</h2>
+                <p class="prerequisito">Prerequisito: Estadística para Administradores II</p>
+                <button class="completar-btn" onclick="completarCurso('curso29', 'curso34')" disabled>🔒 Completar</button>
+            </div>
+        
+            <div class="curso curso-bloqueado" id="curso30">
+                <h2>Introducción a Data Analytics y Big Data</h2>
+                <p class="prerequisito">Prerequisito: Gestión de la información</p>
+                <button class="completar-btn" onclick="completarCurso('curso30', 'curso35')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso31">
+                <h2>Gerencia de Productos Digitales I</h2>
+                <p class="prerequisito">Prerequisito: Comportamiento del Consumidor</p>
+                <button class="completar-btn" onclick="completarCurso('curso31', 'curso38,curso40,curso43')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso32">
+                <h2>Gestión de Personas y Organizaciones</h2>
+                <p class="prerequisito">Prerequisito: Antropología Aplicada a los Negocios</p>
+                <button class="completar-btn" onclick="completarCurso('curso32', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso33">
+                <h2>Economía, Gobernanza y Relaciones de Poder</h2>
+                <p class="prerequisito">Prerequisito: Proyectos Interdisciplinarios II</p>
+                <button class="completar-btn" onclick="completarCurso('curso33', null)" disabled>🔒 Completar</button>
+            </div>
+        </div>
+
+        <!-- Sexto Ciclo -->
+        <div id="sexto-ciclo" class="ciclo">
+            <div class="curso curso-bloqueado" id="curso34">
+                <h2>Gerencia de Operaciones</h2>
+                <p class="prerequisito">Prerequisito: Modelo para la Toma de Decisiones</p>
+                <button class="completar-btn" onclick="completarCurso('curso34', 'curso42')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso35">
+                <h2>Business Analytics</h2>
+                <p class="prerequisito">Prerequisito: Introducción a la Data Analytics y Big Data</p>
+                <button class="completar-btn" onclick="completarCurso('curso35', 'curso54')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso36">
+                <h2>Estrategia Competitiva</h2>
+                <p class="prerequisito">Prerequisito: Investigación de Mercados</p>
+                <button class="completar-btn" onclick="completarCurso('curso36', 'curso41')" disabled>🔒 Completar</button>
+            </div>        
+
+            <div class="curso curso-bloqueado" id="curso37">
+                <h2>Finanzas Corporativas</h2>
+                <p class="prerequisito">Prerequisito: Análisis de Estados Financieros</p>
+                <button class="completar-btn" onclick="completarCurso('curso37', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso38">
+                <h2>Gerencia de Productos Digitales II</h2>
+                <p class="prerequisito">Prerequisito: Gerencia de Productos Digitales I</p>
+                <button class="completar-btn" onclick="completarCurso('curso38', 'curso44,curso48')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso39">
+                <h2>Diseñando tu futuro</h2>
+                <p>Prerequisito: 80 créditos</p>
+                <button class="completar-btn" onclick="completarCurso('curso39', 'curso56')">✅ Completar</button>
+            </div>
+            <div class="curso curso-bloqueado" id="curso40">
+                <h2>Emprendedurismo</h2>
+                <p class="prerequisito">Prerequisito: Gerencia de Productos Digitales I</p>
+                <button class="completar-btn" onclick="completarCurso('curso40', null)" disabled>🔒 Completar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUARTO AÑO (Oculto inicialmente) -->
+    <div id="cuarto-anio" class="anio-content" style="display: none;">
+        <div class="ciclos">
+            <button class="ciclo-btn active" onclick="mostrarCiclo('septimo-ciclo')">Septimo Ciclo</button>
+            <button class="ciclo-btn" onclick="mostrarCiclo('octavo-ciclo')">Octavo Ciclo</button>
+        </div>
+
+        <!-- Septimo Ciclo -->
+        <div id="septimo-ciclo" class="ciclo active">
+            <div class="curso curso-bloqueado" id="curso41">
+                <h2>Gestión de Negocios Globales</h2>
+                <p class="prerequisito">Prerequisito: Estrategia Competitiva</p>
+                <button class="completar-btn" onclick="completarCurso('curso41', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso42">
+                <h2>Supply Chain Management</h2>
+                <p class="prerequisito">Prerequisito: Gestión de Operaciones</p>
+                <button class="completar-btn" onclick="completarCurso('curso42', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso43">
+                <h2>Experience Research & Design</h2>
+                <p class="prerequisito">Prerequisito: Gerencia de Productos Digitales I</p>
+                <button class="completar-btn" onclick="completarCurso('curso43', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso44">
+                <h2>Gestión de Proyectos</h2>
+                <p class="prerequisito">Prerequisito: Gerencia de Productos Digitales II</p>
+                <button class="completar-btn" onclick="completarCurso('curso44', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso" id="curso45">
+                <h2>Electivo de Negocios I</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso45', null)">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso46">
+                <h2>Electivo de Tecnología I</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso46', null)">✅ Completar</button>
+            </div>
+        </div>
+
+        <!-- Octavo Ciclo -->
+        <div id="octavo-ciclo" class="ciclo">
+            <div class="curso curso-bloqueado" id="curso47">
+                <h2>Dirección Estratégica</h2>
+                <p class="prerequisito">Prerequisito: Gestión de Negocios Globales</p>
+                <button class="completar-btn" onclick="completarCurso('curso47', 'curso52,curso53')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso48">
+                <h2>Marketing Digital</h2>
+                <p class="prerequisito">Prerequisito: Gerencia de Productos Digitales II</p>
+                <button class="completar-btn" onclick="completarCurso('curso48', 'curso55')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso49">
+                <h2>Curso 5: Proyecto Digital Real</h2>
+                <p class="prerequisito">Prerequisito: Gestión de Proyectos</p>
+                <button class="completar-btn" onclick="completarCurso('curso49', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso" id="curso50">
+                <h2>Electivo de Negocios II</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso50', null)">✅ Completar</button>
+            </div>        
+
+            <div class="curso" id="curso51">
+                <h2>Electivo de Tecnología II</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso51', null)">✅ Completar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUINTO AÑO (Oculto inicialmente) -->
+    <div id="quinto-anio" class="anio-content" style="display: none;">
+        <div class="ciclos">
+            <button class="ciclo-btn active" onclick="mostrarCiclo('noveno-ciclo')">Noveno Ciclo</button>
+            <button class="ciclo-btn" onclick="mostrarCiclo('decimo-ciclo')">Décimo Ciclo</button>
+        </div>
+
+        <!-- Noveno Ciclo -->
+        <div id="noveno-ciclo" class="ciclo active">
+            <div class="curso curso-bloqueado" id="curso52">
+                <h2>Ética Digital y Negocios Sostenibles</h2>
+                <p class="prerequisito">Prerequisito: Dirección Estratégica</p>
+                <button class="completar-btn" onclick="completarCurso('curso52', 'curso57')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso53">
+                <h2>Formulación y Evaluación de Proyectos Digitales</h2>
+                <p class="prerequisito">Prerequisito: Dirección Estratégica</p>
+                <button class="completar-btn" onclick="completarCurso('curso53', 'curso58')" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso54">
+                <h2>Inteligencia Artificial para Negocios</h2>
+                <p class="prerequisito">Prerequisito: Business Analytics</p>
+                <button class="completar-btn" onclick="completarCurso('curso54', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso55">
+                <h2>Estrategia Digital</h2>
+                <p class="prerequisito">Prerequisito: Marketing Digital</p>
+                <button class="completar-btn" onclick="completarCurso('curso55', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso56">
+                <h2>Estrategias Profesionales</h2>
+                <p class="prerequisito">Prerequisito: Diseñando tu Futuro & 135 créditos</p>
+                <button class="completar-btn" onclick="completarCurso('curso56', 'curso59')" disabled>🔒 Completar</button>
+            </div>
+        </div>
+
+        <!-- Decimo Ciclo -->
+        <div id="decimo-ciclo" class="ciclo">
+            <div class="curso curso-bloqueado" id="curso57">
+                <h2>Liderazgo en Organizaciones Globales</h2>
+                <p class="prerequisito">Prerequisito: Ética Digital y Negocios Sostenibles</p>
+                <button class="completar-btn" onclick="completarCurso('curso57', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso58">
+                <h2>Proyecto Final de Administración y Negocios Digitales</h2>
+                <p class="prerequisito">Prerequisito: Formulación y Evaluación de Proyectos Digitales</p>
+                <button class="completar-btn" onclick="completarCurso('curso58', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso curso-bloqueado" id="curso59">
+                <h2>Mindfulness y Estrategias para Felicidad</h2>
+                <p class="prerequisito">Prerequisito: Estrategias Profesionales</p>
+                <button class="completar-btn" onclick="completarCurso('curso59', null)" disabled>🔒 Completar</button>
+            </div>
+
+            <div class="curso" id="curso60">
+                <h2>Electivo Libre I</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso60', null)">✅ Completar</button>
+            </div>
+
+            <div class="curso" id="curso61">
+                <h2>Electivo Libre II</h2>
+                <p>No tiene prerequisitos.</p>
+                <button class="completar-btn" onclick="completarCurso('curso61', null)">✅ Completar</button>
+            </div>        
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Botón para resetear progreso -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="resetearProgreso()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            🔄 Resetear Todo el Progreso
+        </button>
+    </div>
+</body>
+</html>
